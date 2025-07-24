@@ -1,10 +1,435 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap");
+
+:root {
+  --font-noto: "Noto Sans KR";
+  --font-gothic: "맑은 고딕", "Malgun Gothic", "돋움", "Dotum", sans-serif;
+
+  --gong-menuIcn-color1: #2642d1;
+  --gong-menuIcn-color2: #0082ff;
+  --sobang-menuIcn-color1: #b95253;
+  --sobang-menuIcn-color2: #ff4141;
+  --army-menuIcn-color1: #7a8e53;
+}
+
+/* reset */
+html,
 body {
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: var(--font-gothic);
+  font-size: 13px;
+  color: #000;
+  letter-spacing: -0.05em;
+  line-height: 1.3;
   margin: 0;
-  background: #f8f8f8;
-  color: #222;
+  padding: 0;
+  border: 0;
+}
+div,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+sub,
+sup,
+tt,
+var,
+b,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: inherit;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  position: relative;
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border: 0;
+  table-layout: fixed; /*border-spacing:0px; zoom:1; empty-cells:show; width:100%; */
+}
+th,
+td {
+  word-wrap: break-word;
+  line-height: 1.3;
+  padding-left: 3px;
+  padding-right: 3px;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+input[type="text"],
+input[type="password"],
+input[type="number"] {
+  max-width: 100%;
+  font-family: var(--font-gothic);
+}
+input[type="checkbox"],
+input[type="radio"] {
+  vertical-align: middle;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+textarea {
+  font-family: var(--font-gothic) !important;
+  font-size: 13px;
+  color: #000;
+}
+#accessibility,
+.skip,
+legend,
+caption {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+button {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: 0;
+  line-height: normal;
+  cursor: pointer;
+  font-family: var(--font-gothic);
+}
+button:focus {
+  outline: none;
 }
 a {
-  color: inherit;
   text-decoration: none;
+  cursor: pointer;
+}
+a:link,
+a:hover,
+a:active {
+  text-decoration: none;
+  outline: none !important;
+  color: inherit;
+}
+.clearfix {
+  /**zoom:1*/
+}
+.f_left {
+  float: left;
+}
+.f_right {
+  float: right;
+}
+.d_flex {
+  display: flex;
+}
+.clearfix:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  max-width: 90%;
+}
+.ellipsis2 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+*:focus {
+  outline: none;
+}
+del {
+  text-decoration: line-through;
+  color: #aeaeae;
+}
+.blindw {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+}
+
+@-webkit-keyframes skeleton-gradient {
+  0% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+  50% {
+    background-color: rgba(165, 165, 165, 0.3);
+  }
+  100% {
+    background-color: rgba(165, 165, 165, 0.1);
+  }
+}
+
+@keyframes skeleton-line {
+  100% {
+    background-position: -100% 0;
+  }
+}
+
+/*layout*/
+html {
+  margin: 0 auto;
+}
+#mWrap {
+  position: relative;
+}
+.darkmask {
+  position: absolute;
+  z-index: 9998;
+  background: #000;
+  left: 0;
+  top: 0;
+}
+
+/* Noto Sans KR Settings */
+
+.mt10 {
+  margin-top: 10px;
+}
+.mb0 {
+  margin-bottom: 0px !important;
+}
+.mb30 {
+  margin-bottom: 30px;
+}
+
+/* responsive */
+/* [class*="show-"] { display: none !important; }  */
+.show-1200,
+.show-1024,
+.show-992,
+.show-768,
+.show-640,
+.show-576,
+.show-460 {
+  display: none !important;
+}
+
+@media all and (max-width: 1200px) {
+  /* responsive */
+  .hide-1200,
+  br.hide-1200 {
+    display: none !important;
+  }
+  .show-1200 {
+    display: inherit !important;
+  }
+  .show-1200.block,
+  br.show-1200 {
+    display: block !important;
+  }
+  .show-1200.flex {
+    display: flex !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* responsive */
+  .show-1024 {
+    display: inherit !important;
+  }
+  .show-1024.block,
+  br.show-1024 {
+    display: block !important;
+  }
+  .show-1024.flex {
+    display: flex !important;
+  }
+  .hide-1024,
+  br.hide-1024 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  /* responsive */
+  .show-992 {
+    display: inherit !important;
+  }
+  .show-992.block,
+  br.show-992 {
+    display: block !important;
+  }
+  .show-992.flex {
+    display: flex !important;
+  }
+  .hide-992,
+  br.hide-992 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* responsive */
+  .show-768 {
+    display: inherit !important;
+  }
+  .show-768.block,
+  br.show-768 {
+    display: block !important;
+  }
+  .show-768.flex {
+    display: flex !important;
+  }
+  .hide-768,
+  br.hide-768 {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  /* responsive */
+  .show-640 {
+    display: inherit !important;
+  }
+  .show-640.block,
+  br.show-640 {
+    display: block !important;
+  }
+  .show-640.flex {
+    display: flex !important;
+  }
+  .hide-640,
+  br.hide-640 {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 576px) {
+  /* responsive */
+  .show-576 {
+    display: inherit !important;
+  }
+  .show-576.block,
+  br.show-576 {
+    display: block !important;
+  }
+  .show-576.flex {
+    display: flex !important;
+  }
+  .hide-576,
+  br.hide-576 {
+    display: none !important;
+  }
+}
+
+@media all and (max-width: 460px) {
+  /* responsive */
+  .show-460 {
+    display: inherit !important;
+  }
+  .show-460.block,
+  br.show-460 {
+    display: block !important;
+  }
+  .show-460.flex {
+    display: flex !important;
+  }
+  .hide-460,
+  br.hide-460 {
+    display: none !important;
+  }
 }

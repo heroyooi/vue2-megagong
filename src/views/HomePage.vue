@@ -1,11 +1,64 @@
 <template>
-  <div class="home">
-    <h1>메가공 메인 페이지 시작</h1>
+  <div class="home-page">
+    <div class="layout-container">
+      <LeftQuickMenu />
+      <main class="main-content">
+        <section class="main-left">
+          <MainSlide />
+          <MainTabs />
+        </section>
+        <aside class="main-right">
+          <StickyPanel />
+        </aside>
+      </main>
+      <RightQuickMenu />
+    </div>
   </div>
 </template>
 
 <script>
+import LeftQuickMenu from "@/components/LeftQuickMenu.vue";
+import RightQuickMenu from "@/components/RightQuickMenu.vue";
+import MainSlide from "@/components/MainSlide.vue";
+import MainTabs from "@/components/MainTabs.vue";
+import StickyPanel from "@/components/StickyPanel.vue";
+
 export default {
-  name: "HomePage",
+  components: {
+    LeftQuickMenu,
+    RightQuickMenu,
+    MainSlide,
+    MainTabs,
+    StickyPanel,
+  },
 };
 </script>
+
+<style lang="scss" scoped>
+.layout-container {
+  display: flex;
+  position: relative;
+}
+
+.main-content {
+  display: flex;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  gap: 30px;
+}
+
+.main-left {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.main-right {
+  flex: 1;
+  position: sticky;
+  top: 100px;
+}
+</style>

@@ -48,20 +48,21 @@ export default {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 40px 0;
   gap: 30px;
 }
 
 .main-left {
-  flex: 3;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  width: 790px;
+  gap: 30px;
 }
 
 .main-right {
-  flex: 1;
-  position: sticky;
-  top: 100px;
+  width: 380px;
+  position: relative;
+  top: 0;
+  gap: 30px;
 }
 </style>

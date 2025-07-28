@@ -65,7 +65,7 @@ export default {
 
 <style scoped>
 .teacher-promo-section {
-  margin-top: 60px;
+  /* margin-top: 60px; */
   padding: 0 20px;
   width: 790px;
 }

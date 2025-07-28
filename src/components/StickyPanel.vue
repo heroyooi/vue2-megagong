@@ -1,5 +1,20 @@
 <template>
   <div class="sticky-panel">
-    <div>[ 우측 콘텐츠 고정 ]</div>
+    <MainRightContent />
   </div>
 </template>
+
+<script>
+import MainRightContent from "./MainRightContent.vue";
+
+export default {
+  components: { MainRightContent },
+};
+</script>
+
+<style scoped>
+.sticky-panel {
+  position: sticky;
+  top: 30px;
+}
+</style>

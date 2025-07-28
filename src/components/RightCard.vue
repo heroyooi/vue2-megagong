@@ -30,10 +30,6 @@ export default {
   }
 }
 
-.right-card:hover {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-}
-
 .icon {
   width: 140px;
   height: 90px;

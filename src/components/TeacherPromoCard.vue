@@ -1,8 +1,8 @@
 <template>
   <div class="promo-card">
     <div class="text-area">
-      <h4 class="title">{{ title }}</h4>
-      <p class="desc">{{ description }}</p>
+      <h4 class="title" v-html="formattedTitle"></h4>
+      <p class="desc" v-html="formattedDescription"></p>
       <p class="subject">{{ subject }} {{ name }}</p>
     </div>
     <img class="profile-img" :src="img" :alt="name" />
@@ -18,6 +18,14 @@ export default {
     name: String,
     subject: String,
     img: String,
+  },
+  computed: {
+    formattedTitle() {
+      return this.title.replace(/\n/g, "<br />");
+    },
+    formattedDescription() {
+      return this.description.replace(/\n/g, "<br />");
+    },
   },
 };
 </script>
@@ -48,12 +56,14 @@ export default {
   font-weight: bold;
   margin-bottom: 6px;
   color: #111;
+  line-height: 1.2;
 }
 
 .desc {
   font-size: 14px;
   color: #666;
   margin-bottom: 10px;
+  line-height: 1.2;
 }
 
 .subject {

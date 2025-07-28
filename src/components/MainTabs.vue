@@ -35,10 +35,12 @@ export default {
             {
               img: "https://img.megagong.net/profphoto/gong/gilltoraebi/main_intro.png",
               alt: "이윤주",
+              subject: "국어",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/jhssam1003/main_intro.png",
               alt: "임지혜",
+              subject: "국어",
             },
           ],
         },
@@ -48,18 +50,22 @@ export default {
             {
               img: "https://img.megagong.net/profphoto/gong/tjenglish08/main_intro.png",
               alt: "조태정",
+              subject: "영어",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/megamega2/main_intro.png",
               alt: "성정혜",
+              subject: "영어",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/incredvoc/main_intro.png",
               alt: "경선식",
+              subject: "영어",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/nojoony1/main_intro.png",
               alt: "박노준",
+              subject: "영어",
             },
           ],
         },
@@ -69,18 +75,22 @@ export default {
             {
               img: "https://img.megagong.net/profphoto/gong/gosabu88/main_intro.png",
               alt: "고종훈",
+              subject: "한국사",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/vision0911/main_intro.png",
               alt: "라영환",
+              subject: "한국사",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/duwo20405/main_intro.png",
               alt: "최영재",
+              subject: "한국사",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/jeonhangil/main_intro.png",
               alt: "전한길",
+              subject: "한국사",
             },
           ],
         },
@@ -90,14 +100,17 @@ export default {
             {
               img: "https://img.megagong.net/profphoto/gong/plower3362/main_intro.png",
               alt: "황철곤",
+              subject: "행정학",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/happy0308/main_intro.png",
               alt: "이상헌",
+              subject: "행정학",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/shin242/main_intro.png",
               alt: "신용한",
+              subject: "행정학",
             },
           ],
         },
@@ -107,18 +120,22 @@ export default {
             {
               img: "https://img.megagong.net/profphoto/gong/allawyer/main_intro.png",
               alt: "유휘운",
+              subject: "행정법",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/wjsgywls1/main_intro.png",
               alt: "전효진",
+              subject: "행정법",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/geek2991/main_intro.png",
               alt: "정인국",
+              subject: "행정법",
             },
             {
               img: "https://img.megagong.net/profphoto/gong/ysw7/main_intro.png",
               alt: "양승우",
+              subject: "행정법",
             },
           ],
         },

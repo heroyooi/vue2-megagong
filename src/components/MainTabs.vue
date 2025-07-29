@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "@/libs/axios";
 import TabSlide from "./TabSlide.vue";
 
 export default {
@@ -32,10 +32,13 @@ export default {
       tabs: [],
     };
   },
-  created() {
-    axios.get("http://localhost:4000/api/main-tabs").then((res) => {
+  async created() {
+    try {
+      const res = await axios.get("/api/main-tabs");
       this.tabs = res.data;
-    });
+    } catch (error) {
+      console.error("메인 넥스트공무원 1위 강사진 데이터를 불러오지 못했습니다", error);
+    }
   },
   methods: {
     changeTab(index) {

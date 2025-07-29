@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import axios from "axios";
+import axios from "@/libs/axios";
 import TeacherPromoCard from "./TeacherPromoCard.vue";
 
 export default {
@@ -18,10 +18,13 @@ export default {
       promoList: [],
     };
   },
-  created() {
-    axios.get("http://localhost:4000/api/promo-list").then((res) => {
+  async created() {
+    try {
+      const res = await axios.get("/api/promo-list");
       this.promoList = res.data;
-    });
+    } catch (error) {
+      console.error("메인 지금 주목할 선생님 기획전 데이터를 불러오지 못했습니다", error);
+    }
   },
 };
 </script>

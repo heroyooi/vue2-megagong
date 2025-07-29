@@ -12,15 +12,18 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "MainSlide",
   data() {
     return {
-      slides: [
-        { img: "https://img.megagong.net/m/2025/0724_pass/gong/pass_gong.png", alt: "배너1" },
-        { img: "https://img.megagong.net/m/2025/0724_pass/tech/pass_tech.png", alt: "배너2" },
-        { img: "https://img.megagong.net/m/2025/0724_pass/army/pass_army.png", alt: "배너3" },
-      ],
+      // slides: [
+      //   { img: "https://img.megagong.net/m/2025/0724_pass/gong/pass_gong.png", alt: "배너1" },
+      //   { img: "https://img.megagong.net/m/2025/0724_pass/tech/pass_tech.png", alt: "배너2" },
+      //   { img: "https://img.megagong.net/m/2025/0724_pass/army/pass_army.png", alt: "배너3" },
+      // ],
+      slides: [],
       swiperOption: {
         loop: true,
         autoplay: {
@@ -36,6 +39,14 @@ export default {
         },
       },
     };
+  },
+  async created() {
+    try {
+      const res = await axios.get("http://localhost:4000/api/main-slides");
+      this.slides = res.data;
+    } catch (error) {
+      console.error("메인 슬라이드 데이터를 불러오지 못했습니다", error);
+    }
   },
 };
 </script>

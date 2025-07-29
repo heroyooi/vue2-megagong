@@ -296,6 +296,12 @@ html {
   margin-bottom: 30px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* responsive */
 /* [class*="show-"] { display: none !important; }  */
 .show-1200,

@@ -54,11 +54,12 @@ export default {
   flex-direction: column;
   gap: 12px;
   z-index: 99;
+  width: 106px;
 }
 
 .quick-card {
-  width: 120px;
-  padding: 10px;
+  width: 100%;
+  padding: 10px 5px;
   border-radius: 12px;
   text-align: center;
   font-size: 12px;

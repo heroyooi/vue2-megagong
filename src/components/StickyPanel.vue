@@ -1,14 +1,14 @@
 <template>
   <div class="sticky-panel">
-    <MainRightContent />
+    <MainRightSlide />
   </div>
 </template>
 
 <script>
-import MainRightContent from "./MainRightContent.vue";
+import MainRightSlide from "./MainRightSlide.vue";
 
 export default {
-  components: { MainRightContent },
+  components: { MainRightSlide },
 };
 </script>
 

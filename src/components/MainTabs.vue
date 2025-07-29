@@ -13,7 +13,11 @@
         </button>
       </div>
 
-      <TabSlide v-if="mounted" :key="renderKey" :slides="tabs[currentTab].slides" />
+      <TabSlide
+        v-if="mounted && tabs.length > 0"
+        :key="renderKey"
+        :slides="tabs[currentTab].slides"
+      />
     </div>
   </div>
 </template>

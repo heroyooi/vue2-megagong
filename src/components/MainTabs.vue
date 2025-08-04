@@ -4,7 +4,7 @@
     <div class="tab-slide">
       <div class="tabs">
         <button
-          v-for="(tab, idx) in tabs"
+          v-for="(tab, idx) in mainTabs"
           :key="idx"
           :class="{ active: currentTab === idx }"
           @click="changeTab(idx)"
@@ -14,16 +14,16 @@
       </div>
 
       <TabSlide
-        v-if="mounted && tabs.length > 0"
+        v-if="mounted && mainTabs.length"
         :key="renderKey"
-        :slides="tabs[currentTab].slides"
+        :slides="mainTabs[currentTab].slides"
       />
     </div>
   </div>
 </template>
 
 <script>
-import axios from "@/libs/axios";
+import { mapState, mapActions } from 'vuex';
 import TabSlide from "./TabSlide.vue";
 
 export default {
@@ -33,18 +33,16 @@ export default {
       currentTab: 0,
       renderKey: 0,
       mounted: true,
-      tabs: [],
     };
   },
-  async created() {
-    try {
-      const res = await axios.get("/api/main-tabs");
-      this.tabs = res.data;
-    } catch (error) {
-      console.error("메인 넥스트공무원 1위 강사진 데이터를 불러오지 못했습니다", error);
-    }
+  computed: {
+    ...mapState('main', ['mainTabs']),
+  },
+  created() {
+    this.fetchMainTabs();
   },
   methods: {
+    ...mapActions('main', ['fetchMainTabs']),
     changeTab(index) {
       this.currentTab = index;
       this.mounted = false;
@@ -54,6 +52,7 @@ export default {
       });
     },
   },
+
 };
 </script>
 

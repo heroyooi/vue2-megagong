@@ -8,30 +8,25 @@
 </template>
 
 <script>
-import axios from "@/libs/axios";
+import { mapState, mapActions } from 'vuex';
 import TeacherPromoCard from "./TeacherPromoCard.vue";
 
 export default {
   components: { TeacherPromoCard },
-  data() {
-    return {
-      promoList: [],
-    };
+  computed: {
+    ...mapState('main', ['promoList']),
   },
-  async created() {
-    try {
-      const res = await axios.get("/api/promo-list");
-      this.promoList = res.data;
-    } catch (error) {
-      console.error("메인 지금 주목할 선생님 기획전 데이터를 불러오지 못했습니다", error);
-    }
+  created() {
+    this.fetchPromoList();
+  },
+  methods: {
+    ...mapActions('main', ['fetchPromoList']),
   },
 };
 </script>
 
 <style scoped>
 .teacher-promo-section {
-  /* margin-top: 60px; */
   padding: 0 20px;
   width: 790px;
 }
